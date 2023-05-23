@@ -24,7 +24,7 @@ export const Vacancy: FC<PropsType> = ({
       <div className={s.jobInformation}>
         <div>
           {dataСomparison ? (
-            <span>з/п не казана</span>
+            <span>з/п не указана</span>
           ) : !payment_from ? (
             <span>{`з/п ${payment_to} rub`}</span>
           ) : !payment_to ? (
