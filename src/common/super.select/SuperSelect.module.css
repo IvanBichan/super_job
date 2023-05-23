@@ -1,0 +1,40 @@
+.wrap {
+    position: relative;
+    width: max-content;
+}
+
+.wrap::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: block;
+    pointer-events: none;
+    /*!*стрелка*!
+    background: url("chevron-down.svg");
+    width: 20px;
+    height: 20px;*/
+}
+
+.select {
+    /*убираем стандартное отбражение стилей и стрелки*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*основные стили*/
+    width: 160px;
+    background: transparent;
+    border: 1px solid #3b3636;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px 35px 10px 15px;
+    cursor: pointer;
+}
+
+.select:focus {
+}
+
+
+.option:hover {
+}

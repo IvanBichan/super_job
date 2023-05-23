@@ -1,0 +1,47 @@
+
+.form {
+    width: 315px;
+    height: 360px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid #c8b3d2;
+}
+
+.formInput input[type=number]::-webkit-inner-spin-button,
+.formInput input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+.formInput .button {
+    text-transform: none;
+    width: 275px;
+    height: 40px;
+    background: #5E96FC;
+    border-radius: 8px;
+}
+
+.formInput select {
+    width: 275px;
+    height: 42px;
+    border: 1px solid #D5D6DC;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.formInput input {
+    width: 249px;
+    height: 20px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.error {
+    color: red;
+    margin: 0;
+}

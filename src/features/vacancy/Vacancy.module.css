@@ -1,0 +1,11 @@
+.jobInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color:red;
+}
+
+.jobInformation div:last-child{
+    margin-left: 15px;
+    color: green;
+}

@@ -1,56 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import s from "app/App.module.css";
+import { Header } from "features/header/Header";
+import { CircularIndeterminate } from "common/loader/Loader";
+import { PagesRoute } from "features/pages/PagesRoute";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { appThunk } from "app/app.slice";
 
 function App() {
+  const isLoading = useAppSelector((state) => state.app.isLoading);
+  const user = useAppSelector((state) => state.app.userData);
+  const isAppInitialized = useAppSelector(
+    (state) => state.app.isAppInitialized
+  );
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(appThunk.login());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className={s.App}>
+      <Header />
+      {isLoading ? <CircularIndeterminate /> : ""}
+      {isAppInitialized ? <PagesRoute /> : ""}
+      {/*  <PagesRoute />*/}
     </div>
   );
 }
