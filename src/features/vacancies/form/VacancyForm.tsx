@@ -51,7 +51,6 @@ export const VacancyForm: FC<PropsType> = ({ keyword }) => {
       payment_to: undefined,
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
       const arg: ArgForGetSpecificVacancy = {
         catalogues: +values.professions,
         payment_from: values.payment_from ? values.payment_from : undefined,
@@ -62,8 +61,6 @@ export const VacancyForm: FC<PropsType> = ({ keyword }) => {
       formik.resetForm();
     },
   });
-  //const [industries, onIndustries] = useState(0);
-
   return (
     <Grid container justifyContent="center">
       <Grid item xs={4}>
